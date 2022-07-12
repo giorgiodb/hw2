@@ -1,0 +1,282 @@
+body{
+    background-color: azure;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-tot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 700px;
+}
+
+@media (max-width: 1200px){
+    .flex-tot{
+        height: 650px;
+    }
+}
+@media (max-width: 550px){
+    .flex-tot{
+        height: 600px;
+    }
+}
+
+/*---SFONFO---*/
+.flex-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 500px;
+    background-image: url(../immagini/sfondo.png);
+    background-size: cover;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.title{
+    font-size: 50px;
+    font-family: 'Dela Gothic One';
+    color: white;
+    z-index: 1;
+}
+
+@media (max-width: 1200px){
+    .flex-img{
+        width: 450px;
+        height: 160px;
+    }
+    .title{
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 550px){
+    .flex-img{
+        width: 350px;
+        height: 170px;
+    }
+    .title{
+        font-size: 40px;
+    }
+}
+
+/*---FORM---*/
+.flex-form{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(222, 222, 222);
+    padding: 10px 0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+@media (max-width: 1200px){
+    .flex-form{
+        width: 450px
+    }
+}
+
+@media (max-width: 550px){
+    .flex-form{
+        width: 350px;
+        padding-top: 0px;
+    }
+    #form{
+        margin-bottom: 0px;
+        font-size: 14px;
+    }
+    .flex-form p{
+        font-size: 14px;
+    }
+    #form .signup{
+        font-size: 14px;
+        margin: 0px;
+    }
+}
+
+p {
+    margin: 0.3em;
+    font-family: 'Abel';
+    color: gray;
+    text-align: right;
+}
+
+label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+  
+input {
+    margin-left: 0.6em;
+    width: 200px;
+}
+
+.det{
+    border: 1px solid grey;
+    background-color: azure;
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1200px){
+    .det{
+        width: 165px;
+    }
+}
+
+.error{
+    font-size: 10px;
+    color: rgb(222, 222, 222);
+    text-align: right;
+    margin: 0px;
+    margin-right: 4.8;
+}
+
+.password img{
+    height: 15px;
+    width: 21px;
+    position: relative;
+    right: -260px;
+}
+
+@media (max-width: 1200px){
+    .password img{
+        position: relative;
+        right: -220px;
+    }
+}
+
+/*---GRIGLIA---*/
+.choice-grid{
+    background-color: rgb(222, 222, 222);
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.choice-grid div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 60px;
+    width: calc(20.5% - 5px);
+    background-color: #f4f4f4;
+    border: 3px solid #dcdcdc;
+    padding: 5px;
+}
+
+.choice-grid div img{
+    border-radius: 50px;
+}
+
+@media (max-width: 1200px){
+    .choice-grid div, .choice-grid div img{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media (max-width: 550px){
+    .choice-grid div, .choice-grid div img{
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.unselected{
+    opacity: 0.6;
+}
+
+div.selected{
+    background-color: rgb(6, 184, 6);
+}
+
+/*---BOTTONE---*/
+div{
+    text-align: center;
+}
+
+.details input{
+    border: 1px solid rgb(175, 169, 169);
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+    background-color: rgb(175, 169, 169);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px){
+    .details input{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}
+
+input[type=submit]{
+    color: black;
+    font-family: 'Fjalla One';
+    padding: 3px;
+    font-size: 15px;
+    margin-left: 0px;
+    color: black;
+}
+
+input[type=submit]:hover{
+    background-color: rgb(140, 136, 136);
+}
+
+/*---OTHER---*/
+.signup{
+    text-align: center;
+    font-size: 17px;
+    margin: 0.3em;
+    font-family: 'Abel';
+    color: gray;
+}
+
+.signup a{
+    text-decoration: none;
+    color: black;
+}
+
+.signup a:hover{
+    color: brown;
+}
+
+.hidden{
+    display: none;
+}
+
+span{
+    font-size: 10px;
+}
+
+.error_in{
+    border: 2px solid #fa1c2c;
+}
+
+.error_s{
+    color: #fa1c2c;
+}
+
+.true_in{
+    border: 2px solid rgb(6, 184, 6);
+}
