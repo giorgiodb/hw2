@@ -55,7 +55,9 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-        if(Play::where('id_play', request('id'))->exists()){
+
+        $username = User::where('id', session('user_id'))->first();
+        if(Play::where('id_play', request('id'))->where('user', $username['username'])->exists()){
             return 0;
         }
 
@@ -79,7 +81,8 @@ class SearchController extends Controller {
         $song = Play::where('id_canzone', $song_id);
         $song->delete();
 
-        $songs = Play::count();
+        $username = User::where('id', session('user_id'))->first();
+        $songs = Play::where('user', $username['username'])->count();
         if($songs == 0){
             return 0;
         }else{
@@ -100,7 +103,9 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-        if(Pref::where('id_pref', request('id'))->exists()){
+
+        $username = User::where('id', session('user_id'))->first();
+        if(Pref::where('id_pref', request('id'))->where('user', $username['username'])->exists()){
             return 0;
         }
 
@@ -124,7 +129,8 @@ class SearchController extends Controller {
         $song = Pref::where('id_canzone', $song_id);
         $song->delete();
 
-        $songs = Pref::count();
+        $username = User::where('id', session('user_id'))->first();
+        $songs = Pref::where('user', $username['username'])->count();
         if($songs == 0){
             return 0;
         }else{
