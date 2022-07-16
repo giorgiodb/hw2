@@ -55,9 +55,8 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-
-        $username = User::where('id', session('user_id'))->first();
-        if(Play::where('id_play', request('id'))->where('user', $username['username'])->exists()){
+        
+        if(Play::where('id_play', request('id'))->where('user', request('user'))->exists()){
             return 0;
         }
 
@@ -104,8 +103,7 @@ class SearchController extends Controller {
             return redirect('login');
         }
 
-        $username = User::where('id', session('user_id'))->first();
-        if(Pref::where('id_pref', request('id'))->where('user', $username['username'])->exists()){
+        if(Pref::where('id_pref', request('id'))->where('user', request('user'))->exists()){
             return 0;
         }
 
