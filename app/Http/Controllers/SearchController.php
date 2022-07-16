@@ -55,7 +55,7 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-        
+
         if(Play::where('id_play', request('id'))->where('user', request('user'))->exists()){
             return 0;
         }
@@ -93,9 +93,11 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-        $songs = Play::all();
+        $username = User::where('id', session('user_id'))->first();
+        $songs = Play::where('user', $username['username'])->get();
         return $songs;
     }
+    
 
     //PREFERITI
     public function addSongPref() {
@@ -140,7 +142,9 @@ class SearchController extends Controller {
         if(!Session::get('user_id')){
             return redirect('login');
         }
-        $songs = Pref::all();
+
+        $username = User::where('id', session('user_id'))->first();
+        $songs = Pref::where('user', $username['username'])->get();
         return $songs;
     }
 }
